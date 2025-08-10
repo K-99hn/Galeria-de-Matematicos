@@ -1,0 +1,230 @@
+/* Estilos generales */
+.galeria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.contenido-centrado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.selector-container {
+  margin: 20px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.selector-container label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+.selector {
+  padding: 14px 28px;
+  width: 100%;
+  border: 2px solid #4CAF50;
+  border-radius: 30px;
+  background-color: white;
+  font-size: 1.05rem;
+  color: #2c3e50;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234CAF50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.selector:hover {
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+}
+
+.selector:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25);
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  transition: transform 0.4s ease, box-shadow 0.4s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.foto {
+  width: 100%;
+  max-width: 320px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  display: block;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f3f5;
+  font-size: 1.9rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card p {
+  margin: 12px 0;
+  font-size: 1.1rem;
+  color: #495057;
+  line-height: 1.6;
+  width: 100%;
+  text-align: center;
+}
+
+.card strong {
+  color: #212529;
+}
+
+.card h3 {
+  color: #4CAF50;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card ul {
+  padding-left: 0;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  max-width: 90%;
+}
+
+blockquote {
+  font-style: italic;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #4CAF50;
+  margin: 25px 0 10px;
+  border-radius: 0 8px 8px 0;
+  color: #495057;
+  line-height: 1.7;
+  font-size: 1.15rem;
+  width: 100%;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+  
+  .card {
+    padding: 25px;
+    max-width: 500px;
+  }
+  
+  .selector {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .foto {
+    height: 320px;
+  }
+}
+
+@media (max-width: 576px) {
+  .galeria {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.7rem;
+  }
+  
+  .card h2 {
+    font-size: 1.6rem;
+  }
+  
+  .foto {
+    height: 280px;
+  }
+  
+  blockquote {
+    padding: 15px;
+    font-size: 1.05rem;
+  }
+  
+  .selector-container label {
+    font-size: 1rem;
+  }
+  
+  .card p, .card li {
+    font-size: 1.05rem;
+  }
+}

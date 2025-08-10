@@ -1,10 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import Galeria from "./components/Galeria";
 
 function App() {
- 
+  return (
+    <div>
+      <Galeria />
+    </div>
+  );
 }
 
-export default App
+export default App;
+
