@@ -4,9 +4,12 @@ const Gauss = () => {
   return (
     <div className="card">
       <img src="/images/gauss.jpg" alt="Carl Friedrich Gauss" />
-      <h2>Carl Friedrich Gauss</h2>
-      <p>1777 - 1855</p>
-      <p><em>Alemania</em></p>
+      <h2>Nombre: Carl Friedrich Gauss</h2>
+      <div className="p-container">
+        <p>Año de nacimiento: 1777.</p>
+        <p>Año de fallecimiento: 1855.</p>
+      </div>      
+      <p><em>País: Alemania</em></p>
       <h3>Aportes principales:</h3>
       <ul>
         <li>Teoría de números (Ley de reciprocidad cuadrática)</li>
