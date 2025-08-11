@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Alan from "./Alan-Turing";
 import Emmy from "./Emmy-Noether";
+import Fibonacci from "./Fibonacci";
+import VonNeumann from "./VonNeumann";
+import Gauss from "./Gauss";
+import Seidel from "./Seidel";
 
 const MATEMATICOS = [
   { id: "alan", label: "Alan Turing", Component: Alan },
-  { id: "emmy", label: "Emmy Noether", Component: Emmy }
+  { id: "emmy", label: "Emmy Noether", Component: Emmy },
+  { id: "fibonacci", label: "Leonardo Fibonacci", Component: Fibonacci },
+  { id: "neumann", label: "John Von Neumann", Component: VonNeumann },
+  { id: "gauss", label: "Carl Friedrich Gauss", Component: Gauss },
+  { id: "seidel", label: "Philipp Ludwig von Seidel", Component: Seidel },
 ];
 
 export default function Galeria() {

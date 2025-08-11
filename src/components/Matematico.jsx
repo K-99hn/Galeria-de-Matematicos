@@ -39,3 +39,4 @@ export default function Matematico({ nombre, nacimiento, fallecimiento, pais, ap
 </div>
   );
 }
+
