@@ -3,8 +3,8 @@ import React from "react";
 export default function Matematico({ nombre, nacimiento, fallecimiento, pais, aportes, imagen, frase }) {
   return (
     <div className="border rounded-xl shadow-2xl p-20 w-full max-w-2xl mx-auto my-8 bg-amber-50">
-  {/* Contenedor de imagen centrada */}
-  <div className="flex justify-center -mt-10 mb-4"> {/* -mt-20 para levantar la imagen */}
+  
+  <div className="flex justify-center -mt-10 mb-4">
     <img 
       src={imagen} 
       alt={nombre} 
@@ -12,8 +12,8 @@ export default function Matematico({ nombre, nacimiento, fallecimiento, pais, ap
     />
   </div>
 
-  {/* Contenido del matemático */}
-  <div className="text-center mt-6"> {/* mt-6 para compensar el -mt-20 */}
+  
+  <div className="text-center mt-6"> 
     <h2 className="text-2xl font-bold text-gray-800">{nombre}</h2>
     
     <div className="grid grid-cols-2 gap-4 mt-6 text-left">
