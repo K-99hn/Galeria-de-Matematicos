@@ -1,23 +1,21 @@
 import React from 'react';
+import Matematico from './Matematico';
+import seidelImg from '/images/seidel.jpg';
 
-const Seidel = () => {
+export default function Seidel() {
   return (
-    <div className="card">
-      <img src="/images/seidel.jpg" alt="Philipp Ludwig von Seidel" />
-      <h2>Philipp Ludwig von Seidel</h2>
-      <div className="p-container">
-        <p>Año de nacimiento: 1821</p>
-        <p>Año de fallecimiento: 1896</p>
-      </div>
-      <p><em>Alemania</em></p>
-      <h3>Aportes principales:</h3>
-      <ul>
-        <li>Descomposición de funciones (Descomposición de Seidel)</li>
-        <li>Estudio de la óptica geométrica y aberraciones ópticas</li>
-        <li>Método de Gauss-Seidel para resolver sistemas lineales</li>
-      </ul>
-    </div>
+    <Matematico
+      nombre="Philipp Ludwig von Seidel"
+      nacimiento="1821"
+      fallecimiento ="1896"
+      pais="Alemania"
+      aportes={[
+        "Descomposición de funciones (Descomposición de Seidel)",
+        "Estudio de la óptica geométrica y aberraciones ópticas",
+        "Método de Gauss-Seidel para resolver sistemas lineales"
+      ]}
+      frase=""
+      imagen={seidelImg}
+    />
   );
-};
-
-export default Seidel;
+}

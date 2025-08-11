@@ -1,38 +1,43 @@
-import React, { useState } from 'react';
-import Gauss from './Gauss';
-import Seidel from './Seidel';
+import React, { useState } from "react";
+import Fibonacci from "./Fibonacci";
+import VonNeumann from "./VonNeumann";
+import Gauss from "./Gauss";
+import Seidel from "./Seidel";
 
-const Galeria = () => {
-  const [seleccionado, setSeleccionado] = useState('gauss');
+const MATEMATICOS = [
+  { id: "fibonacci", label: "Leonardo Fibonacci", Component: Fibonacci },
+  { id: "neumann", label: "John Von Neumann", Component: VonNeumann },
+  { id: "gauss", label: "Carl Friedrich Gauss", Component: Gauss },
+  { id: "seidel", label: "Philipp Ludwig von Seidel", Component: Seidel },
+];
 
-  const renderMatematico = () => {
-    switch (seleccionado) {
-      case 'gauss':
-        return <Gauss />;
-      case 'seidel':
-        return <Seidel />;
-      default:
-        return null;
-    }
-  };
+export default function Galeria() {
+  const [selectedId, setSelectedId] = useState(MATEMATICOS[0].id);
+  const ActiveComponent = MATEMATICOS.find(
+    (m) => m.id === selectedId
+  ).Component;
 
   return (
-    <div className="galeria-container">
-      <h1>Galería de Matemáticos</h1>
-      <div className="selector-container">
-        <label htmlFor="matematico">Selecciona un matemático:</label>
-        <select
-          id="matematico"
-          value={seleccionado}
-          onChange={(e) => setSeleccionado(e.target.value)}
-        >
-          <option value="gauss">Carl Friedrich Gauss</option>
-          <option value="seidel">Philipp Ludwig von Seidel</option>
-        </select>
-      </div>
-      {renderMatematico()}
+    <div className="p-6 text-black">
+      <nav className="mb-6 flex gap-2 flex-wrap">
+        {MATEMATICOS.map((m) => (
+          <button
+            key={m.id}
+            onClick={() => setSelectedId(m.id)}
+            className={`px-3 py-1 rounded ${
+              m.id === selectedId
+                ? "bg-amber-800 text-white"
+                : "bg-gray-100 hover:bg-gray-200"
+            }`}
+          >
+            {m.label}
+          </button>
+        ))}
+      </nav>
+
+      <section className="flex justify-center">
+        <ActiveComponent />
+      </section>
     </div>
   );
-};
-
-export default Galeria;
+}
