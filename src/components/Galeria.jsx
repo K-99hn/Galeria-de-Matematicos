@@ -1,52 +1,40 @@
 import React, { useState } from "react";
 import Leibniz from "./Leibniz";
 import Pascal from "./Pascal";
-import "./Galeria.css";
 
-function Galeria() {
-  // Estado inicial: mostrar Leibniz por defecto
-  const [matematicoSeleccionado, setMatematicoSeleccionado] = useState("leibniz");
-  
-  const matematicos = [
-    { id: "leibniz", nombre: "Gottfried Leibniz" },
-    { id: "pascal", nombre: "Blaise Pascal" }
-  ];
+
+const MATEMATICOS = [
+  { id: "leibniz", label: "Gottfried Wilhelm Leibniz", Component: Leibniz },
+  { id: "pascal", label: "Blaise Pascal", Component: Pascal }
+];
+
+export default function Galeria() {
+  const [selectedId, setSelectedId] = useState(MATEMATICOS[0].id);
+  const ActiveComponent = MATEMATICOS.find(
+    (m) => m.id === selectedId
+  ).Component;
 
   return (
-    <div className="galeria">
-      <div className="contenido-centrado">
-        <h1>Galería de Matemáticos</h1>
-        
-        <div className="selector-container">
-          <label htmlFor="matematico-select">Selecciona un matemático:</label>
-          <select
-            id="matematico-select"
-            value={matematicoSeleccionado}
-            onChange={(e) => setMatematicoSeleccionado(e.target.value)}
-            className="selector"
+    <div className="p-6 text-black">
+      <nav className="mb-6 flex gap-2 flex-wrap">
+        {MATEMATICOS.map((m) => (
+          <button
+            key={m.id}
+            onClick={() => setSelectedId(m.id)}
+            className={`px-3 py-1 rounded ${
+              m.id === selectedId
+                ? "bg-amber-800 text-white"
+                : "bg-gray-100 hover:bg-gray-200"
+            }`}
           >
-            {matematicos.map((mat) => (
-              <option key={mat.id} value={mat.id}>
-                {mat.nombre}
-              </option>
-            ))}
-          </select>
-        </div>
+            {m.label}
+          </button>
+        ))}
+      </nav>
 
-        <div className="contenedor">
-          {matematicoSeleccionado === "leibniz" ? (
-            <div className="card-wrapper">
-              <Leibniz />
-            </div>
-          ) : (
-            <div className="card-wrapper">
-              <Pascal />
-            </div>
-          )}
-        </div>
-      </div>
+      <section className="flex justify-center">
+        <ActiveComponent />
+      </section>
     </div>
   );
 }
-
-export default Galeria;
